@@ -177,6 +177,10 @@ export default class DayPickerInput extends React.Component {
     this.handleMonthChange = this.handleMonthChange.bind(this);
     this.handleOverlayFocus = this.handleOverlayFocus.bind(this);
     this.handleOverlayBlur = this.handleOverlayBlur.bind(this);
+
+    // Binding so when passed to <Overlay /> it keeps the this context
+    this.hideDayPicker = this.hideDayPicker.bind(this);
+    this.getDayPicker = this.getDayPicker.bind(this);
   }
 
   componentDidUpdate(prevProps) {
