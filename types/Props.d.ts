@@ -25,7 +25,10 @@ export interface OverlayComponentProps {
   hideDayPicker: () => void;
   getDayPicker: () => React.Ref<DayPicker>;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d9711218 (Add hideDayPicker and getDayPicker methods to OverlayComponent)
 export interface NavbarElementProps {
   className: string;
   classNames: ClassNames;
