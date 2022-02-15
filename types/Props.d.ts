@@ -16,11 +16,7 @@ export interface CaptionElementProps {
 }
 
 export interface OverlayComponentProps {
-<<<<<<< HEAD
   classNames: InputClassNames;
-=======
-  classNames: ClassNames;
->>>>>>> d97112186903e85aebd167d47ec15449dcaff1ef
   month: Date;
   selectedDay: Date;
   input: any;
@@ -29,13 +25,7 @@ export interface OverlayComponentProps {
   hideDayPicker: () => void;
   getDayPicker: () => React.Ref<DayPicker>;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> d9711218 (Add hideDayPicker and getDayPicker methods to OverlayComponent)
-=======
->>>>>>> d97112186903e85aebd167d47ec15449dcaff1ef
 export interface NavbarElementProps {
   className: string;
   classNames: ClassNames;
