@@ -564,6 +564,8 @@ export default class DayPickerInput extends React.Component {
         tabIndex={0} // tabIndex is necessary to catch focus/blur events on Safari
         onFocus={this.handleOverlayFocus}
         onBlur={this.handleOverlayBlur}
+        hideDayPicker={this.hideDayPicker}
+        getDayPicker={this.getDayPicker}
       >
         <DayPicker
           ref={el => (this.daypicker = el)}
