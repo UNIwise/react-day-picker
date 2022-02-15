@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Modifiers, Modifier, DayModifiers } from './Modifiers';
 import { ClassNames, InputClassNames } from './ClassNames';
 import { LocaleUtils } from './LocaleUtils';
+import DayPicker from './DayPicker';
 import DayPickerInput from './DayPickerInput';
 
 export interface CaptionElementProps {
@@ -12,6 +13,17 @@ export interface CaptionElementProps {
   locale: string;
   months?: string[];
   onClick?: React.MouseEventHandler<HTMLElement>;
+}
+
+export interface OverlayComponentProps {
+  classNames: InputClassNames;
+  month: Date;
+  selectedDay: Date;
+  input: any;
+  onFocus: () => void;
+  onBlur: () => void;
+  hideDayPicker: () => void;
+  getDayPicker: () => React.Ref<DayPicker>;
 }
 
 export interface NavbarElementProps {

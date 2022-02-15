@@ -177,6 +177,10 @@ export default class DayPickerInput extends React.Component {
     this.handleMonthChange = this.handleMonthChange.bind(this);
     this.handleOverlayFocus = this.handleOverlayFocus.bind(this);
     this.handleOverlayBlur = this.handleOverlayBlur.bind(this);
+
+    // Binding so when passed to <Overlay /> it keeps the this context
+    this.hideDayPicker = this.hideDayPicker.bind(this);
+    this.getDayPicker = this.getDayPicker.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -544,16 +548,12 @@ export default class DayPickerInput extends React.Component {
     } else if (selectedDays) {
       selectedDay = selectedDays;
     }
-    let onTodayButtonClick;
-    if (dayPickerProps.todayButton) {
-      // Set the current day when clicking the today button
-      onTodayButtonClick = () =>
-        this.updateState(
-          new Date(),
-          formatDate(new Date(), format, dayPickerProps.locale),
-          this.hideAfterDayClick
-        );
-    }
+    const onTodayButtonClick = () =>
+      this.updateState(
+        new Date(),
+        formatDate(new Date(), format, dayPickerProps.locale),
+        this.hideAfterDayClick
+      );
     const Overlay = this.props.overlayComponent;
     return (
       <Overlay
@@ -564,6 +564,8 @@ export default class DayPickerInput extends React.Component {
         tabIndex={0} // tabIndex is necessary to catch focus/blur events on Safari
         onFocus={this.handleOverlayFocus}
         onBlur={this.handleOverlayBlur}
+        hideDayPicker={this.hideDayPicker}
+        getDayPicker={this.getDayPicker}
       >
         <DayPicker
           ref={el => (this.daypicker = el)}
