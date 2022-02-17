@@ -23,7 +23,8 @@ export interface OverlayComponentProps {
   onFocus: () => void;
   onBlur: () => void;
   hideDayPicker: () => void;
-  getDayPicker: () => React.Ref<DayPicker>;
+  getDayPicker: () => DayPicker;
+  setDate: (d: Date) => void;
 }
 
 export interface NavbarElementProps {
@@ -130,9 +131,9 @@ export interface DayPickerProps {
   onKeyDown?: (e: React.KeyboardEvent<HTMLDivElement>) => void;
   onMonthChange?: (month: Date) => void;
   onTodayButtonClick?: (
-    day: Date,
-    modifiers: DayModifiers,
-    e: React.MouseEvent<HTMLButtonElement>
+    day?: Date,
+    modifiers?: DayModifiers,
+    e?: React.MouseEvent<HTMLButtonElement>
   ) => void;
   onWeekClick?: (
     weekNumber: number,
