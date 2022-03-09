@@ -24,7 +24,6 @@ export interface OverlayComponentProps {
   onBlur: () => void;
   hideDayPicker: () => void;
   getDayPicker: () => DayPicker;
-  setDate: (d: Date) => void;
 }
 
 export interface NavbarElementProps {
