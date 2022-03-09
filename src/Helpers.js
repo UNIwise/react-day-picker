@@ -118,8 +118,8 @@ export function getWeekArray(
 
 export function startOfMonth(d) {
   const newDate = clone(d);
-  // newDate.setDate(1);
-  // newDate.setHours(12, 0, 0, 0); // always set noon to avoid time zone issues
+  newDate.setDate(1);
+  newDate.setHours(12, 0, 0, 0); // always set noon to avoid time zone issues
   return newDate;
 }
 

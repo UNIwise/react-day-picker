@@ -22,8 +22,6 @@ export interface OverlayComponentProps {
   input: any;
   onFocus: () => void;
   onBlur: () => void;
-  hideDayPicker: () => void;
-  getDayPicker: () => DayPicker;
 }
 
 export interface NavbarElementProps {

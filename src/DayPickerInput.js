@@ -363,7 +363,7 @@ export default class DayPickerInput extends React.Component {
   }
 
   handleInputFocus(e) {
-    // this.showDayPicker();
+    this.showDayPicker();
     // Set `overlayHasFocus` after a timeout so the overlay can be hidden when
     // the input is blurred
     this.inputFocusTimeout = setTimeout(() => {
@@ -558,8 +558,6 @@ export default class DayPickerInput extends React.Component {
     const Overlay = this.props.overlayComponent;
     return (
       <Overlay
-        hideDayPicker={this.hideDayPicker}
-        getDayPicker={this.getDayPicker}
         classNames={classNames}
         month={this.state.month}
         selectedDay={selectedDay}
@@ -569,9 +567,9 @@ export default class DayPickerInput extends React.Component {
         onBlur={this.handleOverlayBlur}
       >
         <DayPicker
+          {...dayPickerProps}
           ref={el => (this.daypicker = el)}
           onTodayButtonClick={onTodayButtonClick}
-          {...dayPickerProps}
           month={this.state.month}
           selectedDays={selectedDay}
           onDayClick={this.handleDayClick}
