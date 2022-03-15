@@ -178,24 +178,6 @@ describe('DayPicker’s navigation', () => {
     expect(showNextMonth).toHaveBeenCalledTimes(1);
     showNextMonth.mockReset();
   });
-  it('should call `showPreviousYear()` when the UP key is pressed', () => {
-    const wrapper = mount(<DayPicker />);
-    const showPreviousYear = jest.spyOn(wrapper.instance(), 'showPreviousYear');
-    wrapper
-      .find('.DayPicker-wrapper')
-      .simulate('keyDown', { keyCode: keys.UP });
-    expect(showPreviousYear).toHaveBeenCalledTimes(1);
-    showPreviousYear.mockReset();
-  });
-  it('should call `showNextYear()` when the DOWN key is pressed', () => {
-    const wrapper = mount(<DayPicker />);
-    const showNextYear = jest.spyOn(wrapper.instance(), 'showNextYear');
-    wrapper
-      .find('.DayPicker-wrapper')
-      .simulate('keyDown', { keyCode: keys.DOWN });
-    expect(showNextYear).toHaveBeenCalledTimes(1);
-    showNextYear.mockReset();
-  });
   it('should call `focusNextDay()` when the RIGHT key is pressed on a day', () => {
     const wrapper = mount(<DayPicker />);
     const focusNextDay = jest.spyOn(wrapper.instance(), 'focusNextDay');

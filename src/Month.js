@@ -95,7 +95,8 @@ export default class Month extends Component {
     dayModifiers.forEach(modifier => {
       modifiers[modifier] = true;
     });
-
+    const isSelected =
+      dayModifiers.indexOf(this.props.classNames.selected) > -1;
     return (
       <Day
         key={`${isOutside ? 'outside-' : ''}${key}`}
@@ -107,11 +108,18 @@ export default class Month extends Component {
           isOutside && !this.props.showOutsideDays && !this.props.fixedWeeks
         }
         tabIndex={tabIndex}
-        ariaLabel={this.props.localeUtils.formatDay(day, this.props.locale)}
+        ariaLabel={
+          isSelected
+            ? `Selected ${this.props.localeUtils.formatDay(
+                day,
+                this.props.locale
+              )}`
+            : this.props.localeUtils.formatDay(day, this.props.locale)
+        }
         ariaDisabled={
           isOutside || dayModifiers.indexOf(this.props.classNames.disabled) > -1
         }
-        ariaSelected={dayModifiers.indexOf(this.props.classNames.selected) > -1}
+        ariaSelected={isSelected}
         onClick={this.props.onDayClick}
         onFocus={this.props.onDayFocus}
         onKeyDown={this.props.onDayKeyDown}
