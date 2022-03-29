@@ -22,10 +22,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_READ_TOKEN }}
 
-      - name: Build package and storybook
+      - name: Build package
         run: |
           yarn build
-          yarn storybook:build
 
       - name: Set package version
         run: yarn version --new-version "${GITHUB_REF:11}" --no-git-tag-version
@@ -35,9 +34,3 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Deploy storybook to Github Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
