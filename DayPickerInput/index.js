@@ -1,1 +1,3 @@
-module.exports = require('../build/DayPickerInput');
+import DayPickerInput from '../build/DayPickerInput';
+
+export default DayPickerInput;
