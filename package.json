@@ -32,10 +32,6 @@
     "build:umd": "cross-env NODE_ENV=production webpack -p",
     "build:css": "postcss src/style.css --use autoprefixer -d lib/ --no-map"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gpbl/react-day-picker.git"
-  },
   "keywords": [
     "react",
     "react-component",
