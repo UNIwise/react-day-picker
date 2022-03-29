@@ -1,11 +1,8 @@
-.DS_Store
-
 node_modules
+.log
 coverage
+test-report.xml
+docs/_site
+umd
+lib
 build
-dist
-yarn-debug.log*
-yarn-error.log*
-/.yarn/cache
-/.yarn/install-state.gz
-/.yarn/build-state.yml
